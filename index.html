@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대본 작성기 - Screenplay Writer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1><i class="fas fa-theater-masks"></i> 대본 작성기</h1>
+            <div class="header-buttons">
+                <button id="saveBtn" class="btn btn-primary">
+                    <i class="fas fa-save"></i> 저장
+                </button>
+                <button id="loadBtn" class="btn btn-secondary">
+                    <i class="fas fa-folder-open"></i> 불러오기
+                </button>
+                <button id="exportBtn" class="btn btn-success">
+                    <i class="fas fa-download"></i> 내보내기
+                </button>
+            </div>
+        </header>
+
+        <!-- 메인 작업 영역 -->
+        <main class="main-content">
+            <!-- 사이드바 -->
+            <aside class="sidebar">
+                <div class="project-info">
+                    <h3>프로젝트 정보</h3>
+                    <input type="text" id="scriptTitle" placeholder="대본 제목" class="input-field">
+                    <input type="text" id="author" placeholder="작가명" class="input-field">
+                    <input type="text" id="date" placeholder="날짜" class="input-field" value="">
+                </div>
+
+                <div class="characters">
+                    <h3>등장인물</h3>
+                    <div id="charactersList"></div>
+                    <button id="addCharacterBtn" class="btn btn-small">
+                        <i class="fas fa-plus"></i> 등장인물 추가
+                    </button>
+                </div>
+
+                <div class="scenes">
+                    <h3>장면 목록</h3>
+                    <div id="scenesList"></div>
+                    <button id="addSceneBtn" class="btn btn-small">
+                        <i class="fas fa-plus"></i> 장면 추가
+                    </button>
+                </div>
+            </aside>
+
+            <!-- 작성 영역 -->
+            <section class="writing-area">
+                <div class="scene-header">
+                    <input type="text" id="currentSceneTitle" placeholder="장면 제목 (예: INT. 카페 - 낮)" class="scene-title-input">
+                </div>
+
+                <div class="script-editor">
+                    <div id="scriptContent" contenteditable="true" class="script-content">
+                        <div class="script-line">
+                            <span class="line-type">지문</span>
+                            <span class="line-content">여기에 대본을 작성하세요...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor-toolbar">
+                    <button class="toolbar-btn" data-type="action">지문</button>
+                    <button class="toolbar-btn" data-type="dialogue">대사</button>
+                    <button class="toolbar-btn" data-type="parenthetical">지시문</button>
+                    <button class="toolbar-btn" data-type="character">등장인물</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
